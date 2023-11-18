@@ -19,6 +19,7 @@ import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
 import VueApexCharts from "vue3-apexcharts";
+import dayjs from "dayjs";
 
 // Import Global Components
 import DistrictChart from "./components/charts/DistrictChart.vue";
@@ -34,6 +35,10 @@ import TimelineStackedChart from "./components/charts/TimelineStackedChart.vue";
 import MapLegend from "./components/charts/MapLegend.vue";
 import MetroChart from "./components/charts/MetroChart.vue";
 import HeatmapChart from "./components/charts/HeatmapChart.vue";
+import TestChart from "./components/charts/TestChart.vue";
+import TestChart2 from "./components/charts/TestChart2.vue";
+import TestChart3 from "./components/charts/TestChart3.vue";
+import MadeChart from "./components/charts/MadeChart.vue";
 
 const app = createApp(App);
 
@@ -42,6 +47,7 @@ app.use(router);
 const pinia = createPinia();
 app.use(pinia);
 app.use(VueApexCharts);
+app.use(dayjs);
 
 app.component("DistrictChart", DistrictChart);
 app.component("DonutChart", DonutChart);
@@ -56,5 +62,9 @@ app.component("TimelineStackedChart", TimelineStackedChart);
 app.component("MapLegend", MapLegend);
 app.component("MetroChart", MetroChart);
 app.component("HeatmapChart", HeatmapChart);
+app.component("TestChart", TestChart);
+app.component("TestChart2", TestChart2);
+app.component("TestChart3", TestChart3);
+app.component("MadeChart", MadeChart);
 
 app.mount("#app");

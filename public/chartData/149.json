@@ -1,0 +1,459 @@
+{
+	"data": [
+		{
+			"name": "",
+			"data": [
+				{
+					"x": "2023/06​",
+					"y": 21.28,
+					"data": [
+						{
+							"Route_Name": "斯福路幹線",
+							"Carbon": 1.72
+						},
+						{
+							"Route_Name": "中山幹線",
+							"Carbon": 0.02
+						},
+						{
+							"Route_Name": "承德幹線",
+							"Carbon": 0.94
+						},
+						{
+							"Route_Name": "民權幹線",
+							"Carbon": 1.9
+						},
+						{
+							"Route_Name": "和平幹線",
+							"Carbon": 0.36
+						},
+						{
+							"Route_Name": "信義幹線",
+							"Carbon": 0.44
+						},
+						{
+							"Route_Name": "208",
+							"Carbon": 1.2
+						},
+						{
+							"Route_Name": "236區",
+							"Carbon": 1.8
+						},
+						{
+							"Route_Name": "251",
+							"Carbon": 1.3
+						},
+						{
+							"Route_Name": "251區",
+							"Carbon": 0.12
+						},
+						{
+							"Route_Name": "262",
+							"Carbon": 0.92
+						},
+						{
+							"Route_Name": "284",
+							"Carbon": 1.7
+						},
+						{
+							"Route_Name": "292",
+							"Carbon": 1.12
+						},
+						{
+							"Route_Name": "307",
+							"Carbon": 2
+						},
+						{
+							"Route_Name": "557",
+							"Carbon": 0.18
+						},
+						{
+							"Route_Name": "66",
+							"Carbon": 1.52
+						},
+						{
+							"Route_Name": "902",
+							"Carbon": 1.6
+						},
+						{
+							"Route_Name": "957",
+							"Carbon": 0.26
+						},
+						{
+							"Route_Name": "紅12",
+							"Carbon": 0.82
+						},
+						{
+							"Route_Name": "藍36",
+							"Carbon": 0.96
+						},
+						{
+							"Route_Name": "棕2",
+							"Carbon": 0.4
+						}
+					]
+				},
+				{
+					"x": "2023/07",
+					"y": 18.38,
+					"data": [
+						{
+							"Route_Name": "斯福路幹線",
+							"Carbon": 0.52
+						},
+						{
+							"Route_Name": "中山幹線",
+							"Carbon": 0.02
+						},
+						{
+							"Route_Name": "承德幹線",
+							"Carbon": 0.36
+						},
+						{
+							"Route_Name": "民權幹線",
+							"Carbon": 1.5
+						},
+						{
+							"Route_Name": "和平幹線",
+							"Carbon": 1.86
+						},
+						{
+							"Route_Name": "信義幹線",
+							"Carbon": 1.68
+						},
+						{
+							"Route_Name": "208",
+							"Carbon": 0.76
+						},
+						{
+							"Route_Name": "236區",
+							"Carbon": 0.6
+						},
+						{
+							"Route_Name": "251",
+							"Carbon": 0.2
+						},
+						{
+							"Route_Name": "251區",
+							"Carbon": 1.62
+						},
+						{
+							"Route_Name": "262",
+							"Carbon": 1.56
+						},
+						{
+							"Route_Name": "284",
+							"Carbon": 0.42
+						},
+						{
+							"Route_Name": "292",
+							"Carbon": 1.22
+						},
+						{
+							"Route_Name": "307",
+							"Carbon": 1.42
+						},
+						{
+							"Route_Name": "557",
+							"Carbon": 0.28
+						},
+						{
+							"Route_Name": "66",
+							"Carbon": 0.06
+						},
+						{
+							"Route_Name": "902",
+							"Carbon": 1.6
+						},
+						{
+							"Route_Name": "957",
+							"Carbon": 1.56
+						},
+						{
+							"Route_Name": "紅12",
+							"Carbon": 0.04
+						},
+						{
+							"Route_Name": "藍36",
+							"Carbon": 0.1
+						},
+						{
+							"Route_Name": "棕2",
+							"Carbon": 1
+						}
+					]
+				},
+				{
+					"x": "2023/08",
+					"y": 23.12,
+					"data": [
+						{
+							"Route_Name": "斯福路幹線",
+							"Carbon": 1.68
+						},
+						{
+							"Route_Name": "中山幹線",
+							"Carbon": 0.62
+						},
+						{
+							"Route_Name": "承德幹線",
+							"Carbon": 1.84
+						},
+						{
+							"Route_Name": "民權幹線",
+							"Carbon": 1.46
+						},
+						{
+							"Route_Name": "和平幹線",
+							"Carbon": 1.36
+						},
+						{
+							"Route_Name": "信義幹線",
+							"Carbon": 0.26
+						},
+						{
+							"Route_Name": "208",
+							"Carbon": 1.1
+						},
+						{
+							"Route_Name": "236區",
+							"Carbon": 0.2
+						},
+						{
+							"Route_Name": "251",
+							"Carbon": 1.66
+						},
+						{
+							"Route_Name": "251區",
+							"Carbon": 0.62
+						},
+						{
+							"Route_Name": "262",
+							"Carbon": 1
+						},
+						{
+							"Route_Name": "284",
+							"Carbon": 1.94
+						},
+						{
+							"Route_Name": "292",
+							"Carbon": 0.1
+						},
+						{
+							"Route_Name": "307",
+							"Carbon": 1.78
+						},
+						{
+							"Route_Name": "557",
+							"Carbon": 1.66
+						},
+						{
+							"Route_Name": "66",
+							"Carbon": 0.78
+						},
+						{
+							"Route_Name": "902",
+							"Carbon": 1.66
+						},
+						{
+							"Route_Name": "957",
+							"Carbon": 1.74
+						},
+						{
+							"Route_Name": "紅12",
+							"Carbon": 1.06
+						},
+						{
+							"Route_Name": "藍36",
+							"Carbon": 0.46
+						},
+						{
+							"Route_Name": "棕2",
+							"Carbon": 0.14
+						}
+					]
+				},
+				{
+					"x": "2023/09",
+					"y": 25.04,
+					"data": [
+						{
+							"Route_Name": "斯福路幹線",
+							"Carbon": 1.88
+						},
+						{
+							"Route_Name": "中山幹線",
+							"Carbon": 1.3
+						},
+						{
+							"Route_Name": "承德幹線",
+							"Carbon": 0.56
+						},
+						{
+							"Route_Name": "民權幹線",
+							"Carbon": 1.58
+						},
+						{
+							"Route_Name": "和平幹線",
+							"Carbon": 1.76
+						},
+						{
+							"Route_Name": "信義幹線",
+							"Carbon": 0.86
+						},
+						{
+							"Route_Name": "208",
+							"Carbon": 1.12
+						},
+						{
+							"Route_Name": "236區",
+							"Carbon": 1.62
+						},
+						{
+							"Route_Name": "251",
+							"Carbon": 0.54
+						},
+						{
+							"Route_Name": "251區",
+							"Carbon": 1.34
+						},
+						{
+							"Route_Name": "262",
+							"Carbon": 0.92
+						},
+						{
+							"Route_Name": "284",
+							"Carbon": 1.92
+						},
+						{
+							"Route_Name": "292",
+							"Carbon": 0.8
+						},
+						{
+							"Route_Name": "307",
+							"Carbon": 1.04
+						},
+						{
+							"Route_Name": "557",
+							"Carbon": 0.38
+						},
+						{
+							"Route_Name": "66",
+							"Carbon": 2
+						},
+						{
+							"Route_Name": "902",
+							"Carbon": 1.66
+						},
+						{
+							"Route_Name": "957",
+							"Carbon": 0.1
+						},
+						{
+							"Route_Name": "紅12",
+							"Carbon": 1.84
+						},
+						{
+							"Route_Name": "藍36",
+							"Carbon": 1.46
+						},
+						{
+							"Route_Name": "棕2",
+							"Carbon": 0.36
+						}
+					]
+				},
+				{
+					"x": "2023/10",
+					"y": 19.42,
+					"data": [
+						{
+							"Route_Name": "斯福路幹線",
+							"Carbon": 0.2
+						},
+						{
+							"Route_Name": "中山幹線",
+							"Carbon": 0.8
+						},
+						{
+							"Route_Name": "承德幹線",
+							"Carbon": 0.16
+						},
+						{
+							"Route_Name": "民權幹線",
+							"Carbon": 1.1
+						},
+						{
+							"Route_Name": "和平幹線",
+							"Carbon": 1.14
+						},
+						{
+							"Route_Name": "信義幹線",
+							"Carbon": 1.14
+						},
+						{
+							"Route_Name": "208",
+							"Carbon": 1.7
+						},
+						{
+							"Route_Name": "236區",
+							"Carbon": 1.14
+						},
+						{
+							"Route_Name": "251",
+							"Carbon": 1.88
+						},
+						{
+							"Route_Name": "251區",
+							"Carbon": 0.56
+						},
+						{
+							"Route_Name": "262",
+							"Carbon": 0.72
+						},
+						{
+							"Route_Name": "284",
+							"Carbon": 1.12
+						},
+						{
+							"Route_Name": "292",
+							"Carbon": 0.68
+						},
+						{
+							"Route_Name": "307",
+							"Carbon": 0.86
+						},
+						{
+							"Route_Name": "557",
+							"Carbon": 0.44
+						},
+						{
+							"Route_Name": "66",
+							"Carbon": 0.14
+						},
+						{
+							"Route_Name": "902",
+							"Carbon": 1.72
+						},
+						{
+							"Route_Name": "957",
+							"Carbon": 0.84
+						},
+						{
+							"Route_Name": "紅12",
+							"Carbon": 1.82
+						},
+						{
+							"Route_Name": "藍36",
+							"Carbon": 1.24
+						},
+						{
+							"Route_Name": "棕2",
+							"Carbon": 0.02
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -13,14 +13,13 @@ const props = defineProps([
 const mapStore = useMapStore();
 
 // How many data points to show before summing all remaining points into "other"
-const steps = ref(6);
+const steps = ref(4);
 
 // Donut charts in apexcharts uses a slightly different data format from other chart types
 // As such, the following parsing functions are required
 const parsedSeries = computed(() => {
-	console.log(props.series[0].data);
+	if (!props.series[0].data) return;
 	const toParse = [...props.series[0].data];
-	console.log(toParse.length);
 	if (toParse.length <= steps.value) {
 		return toParse.map((item) => item.y);
 	}
@@ -46,44 +45,36 @@ const parsedLabels = computed(() => {
 	output.push("其他");
 	return output;
 });
-const sum = computed(() => {
-	return Math.round(parsedSeries.value.reduce((a, b) => a + b) * 100) / 100;
-});
 
 // chartOptions needs to be in the bottom since it uses computed data
 const chartOptions = ref({
 	chart: {
-		offsetY: 10,
+		type: "polarArea",
 	},
 	colors:
 		props.series.length >= steps.value
 			? [...props.chart_config.color, "#848c94"]
 			: props.chart_config.color,
-	dataLabels: {
-		formatter: function (val, { seriesIndex, w }) {
-			let value = w.globals.labels[seriesIndex];
-			return value.length > 7 ? value.slice(0, 6) + "..." : value;
-		},
-	},
+	// dataLabels: {
+	// 	formatter: function (val, { seriesIndex, w }) {
+	// 		let value = w.globals.labels[seriesIndex];
+	// 		return value.length > 7 ? value.slice(0, 6) + "..." : value;
+	// 	},
+	// },
+	fill: { opacity: 1 },
 	labels: parsedLabels,
 	legend: {
-		show: false,
-	},
-	plotOptions: {
-		pie: {
-			dataLabels: {
-				offset: 15,
-			},
-			donut: {
-				size: "77.5%",
-			},
-		},
+		position: "bottom",
+		// show: false,
 	},
 	stroke: {
-		colors: ["#282a2c"],
+		colors: ["#fff"],
 		show: true,
 		width: 3,
 	},
+	// theme: {
+	// 	monochrome: { enabled: true, shadeTo: "light", shadeIntensity: 0.6 },
+	// },
 	tooltip: {
 		followCursor: false,
 		custom: function ({ series, seriesIndex, w }) {
@@ -99,6 +90,20 @@ const chartOptions = ref({
 				"</span>" +
 				"</div>"
 			);
+		},
+	},
+	yaxis: {
+		show: false,
+		// labels: {
+		// 	style: {
+		// 		colors: ["#fff", "#fff", "#fff", "#fff", "#fff"],
+		// 	},
+		// },
+	},
+	plotOptions: {
+		polarArea: {
+			rings: { strokeWidth: 0.1 },
+			spokes: { strokeWidth: 0 },
 		},
 	},
 });
@@ -126,24 +131,20 @@ function handleDataSelection(e, chartContext, config) {
 </script>
 
 <template>
-	<div v-if="activeChart === 'DonutChart'" class="donutchart">
+	<div v-if="activeChart === 'TestChart'" class="TestChart">
 		<apexchart
 			width="100%"
-			type="donut"
+			type="polarArea"
 			:options="chartOptions"
 			:series="parsedSeries"
 			@dataPointSelection="handleDataSelection"
 		>
 		</apexchart>
-		<div class="donutchart-title">
-			<h5>總合</h5>
-			<h6>{{ sum }}</h6>
-		</div>
 	</div>
 </template>
 
 <style scoped lang="scss">
-.donutchart {
+.TestChart {
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -151,23 +152,5 @@ function handleDataSelection(e, chartContext, config) {
 	align-items: center;
 	position: relative;
 	overflow-y: visible;
-
-	&-title {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		position: absolute;
-
-		h5 {
-			color: var(--color-complement-text);
-		}
-
-		h6 {
-			color: var(--color-complement-text);
-			font-size: var(--font-m);
-			font-weight: 400;
-		}
-	}
 }
 </style>

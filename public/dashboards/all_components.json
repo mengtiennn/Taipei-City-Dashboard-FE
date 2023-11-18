@@ -4129,6 +4129,198 @@
 				"https://github.com/tpe-doit/YouBike-Optimization"
 			],
 			"contributors": ["tuic"]
+		},
+		"148": {
+			"id": 148,
+			"index": "test_projext1",
+			"map_config": [
+				{
+					"index": "test_projext1",
+					"type": "fill",
+					"paint": {
+						"fill-color": [
+							"match",
+							["get", "category"],
+							"極低",
+							"#FFFFCC",
+							"低",
+							"#e7d198",
+							"中低",
+							"#d1a26c",
+							"中",
+							"#b9734a",
+							"高",
+							"#800026",
+							"#800026"
+						],
+						"fill-opacity": 0.8
+					},
+					"property": [
+						{
+							"key": "category",
+							"name": "總體需求"
+						}
+					],
+					"title": "潛在需求"
+				}
+			],
+			"chart_config": {
+				"types": ["TestChart", "BarChart"],
+				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
+				"unit": "個測試單位"
+			},
+			"chart_data": [1, 2, 3, 4, 5, 6, 7, 8],
+			"name": "測試組件1",
+			"source": "鴻海",
+			"time_from": "2023-11-11T00:00:00+08:00",
+			"time_to": null,
+			"short_desc": "",
+			"long_desc": "測試組件的說明",
+			"use_case": "測試組件的情境",
+			"tags": [],
+			"links": [
+				"https://tuic.gov.taipei/youbike",
+				"https://github.com/tpe-doit/YouBike-Optimization"
+			],
+			"contributors": ["tuic"]
+		},
+		"149": {
+			"id": 149,
+			"index": "MadeChart",
+			"map_config": [
+				{
+					"index": "MadeChart",
+					"type": "fill",
+					"paint": {
+						"fill-color": [
+							"match",
+							["get", "category"],
+							"#d1a26c",
+							"#b9734a",
+							"#9f4333",
+							"#800026"
+						],
+						"fill-opacity": 0.8
+					},
+					"property": [
+						{
+							"key": "category",
+							"name": "總體需求"
+						}
+					],
+					"title": "潛在需求"
+				}
+			],
+			"chart_config": {
+				"types": ["MadeChart", "BarChart"],
+				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
+				"unit": "件"
+			},
+			"name": "融合組件",
+			"source": "鴻海",
+			"time_from": "2023-11-11T00:00:00+08:00",
+			"time_to": null,
+			"short_desc": "",
+			"long_desc": "測試組件的說明",
+			"use_case": "測試組件的情境",
+			"tags": [],
+			"links": [
+				"https://tuic.gov.taipei/youbike",
+				"https://github.com/tpe-doit/YouBike-Optimization"
+			],
+			"contributors": ["tuic"]
+		},
+		"150": {
+			"id": 150,
+			"index": "TestChart2",
+			"map_config": [
+				{
+					"index": "TestChart2",
+					"type": "fill",
+					"paint": {
+						"fill-color": [
+							"match",
+							["get", "category"],
+							"#d1a26c",
+							"#b9734a",
+							"#9f4333",
+							"#800026"
+						],
+						"fill-opacity": 0.8
+					},
+					"property": [
+						{
+							"key": "category",
+							"name": "總體需求"
+						}
+					],
+					"title": "潛在需求"
+				}
+			],
+			"chart_config": {
+				"types": ["TestChart2", "BarChart"],
+				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
+				"unit": "件"
+			},
+			"name": "三維組件",
+			"source": "鴻海",
+			"time_from": "2023-11-11T00:00:00+08:00",
+			"time_to": null,
+			"short_desc": "",
+			"long_desc": "測試組件的說明",
+			"use_case": "測試組件的情境",
+			"tags": [],
+			"links": [
+				"https://tuic.gov.taipei/youbike",
+				"https://github.com/tpe-doit/YouBike-Optimization"
+			],
+			"contributors": ["tuic"]
+		},
+		"151": {
+			"id": 151,
+			"index": "TestChart3",
+			"map_config": [
+				{
+					"index": "TestChart3",
+					"type": "fill",
+					"paint": {
+						"fill-color": [
+							"match",
+							["get", "category"],
+							"#d1a26c",
+							"#b9734a",
+							"#9f4333",
+							"#800026"
+						],
+						"fill-opacity": 0.8
+					},
+					"property": [
+						{
+							"key": "category",
+							"name": "總體需求"
+						}
+					],
+					"title": "潛在需求"
+				}
+			],
+			"chart_config": {
+				"types": ["TestChart3", "BarChart"],
+				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
+				"unit": "件"
+			},
+			"name": "gruop組件",
+			"source": "鴻海",
+			"time_from": "2023-11-11T00:00:00+08:00",
+			"time_to": null,
+			"short_desc": "",
+			"long_desc": "測試組件的說明",
+			"use_case": "測試組件的情境",
+			"tags": [],
+			"links": [
+				"https://tuic.gov.taipei/youbike",
+				"https://github.com/tpe-doit/YouBike-Optimization"
+			],
+			"contributors": ["tuic"]
 		}
 	}
 }

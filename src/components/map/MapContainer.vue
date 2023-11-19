@@ -7,6 +7,7 @@ import { useDialogStore } from '../../store/dialogStore';
 import { useContentStore } from '../../store/contentStore';
 
 import MobileLayers from '../dialogs/MobileLayers.vue';
+import mapLayerSeletor from '../components/mapLayerSeletor.vue';
 
 const mapStore = useMapStore();
 const dialogStore = useDialogStore();
@@ -46,6 +47,7 @@ onMounted(() => {
 			<input v-if="mapStore.savedLocations.length < 10" type="text" placeholder="新增後按Enter" v-model="newSavedLocation"
 				maxlength="6" @focusout="newSavedLocation = ''" @keypress.enter="handleSubmitNewLocation" />
 		</div>
+		<mapLayerSeletor v-if="mapStore.mapLayerTimeSeletor"/>
 	</div>
 </template>
 

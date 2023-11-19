@@ -54,8 +54,13 @@ function handleToggle() {
 	}
 	if (checked.value) {
 		mapStore.addToMapLayerList(props.content.map_config);
+		if (props.content.selectTime == true) {
+			console.log('顯示時間軸', props.content.selectTime)
+			mapStore.showSelectTimeLayer()
+		}
 	} else {
 		mapStore.turnOffMapLayerVisibility(props.content.map_config);
+		mapStore.removeSelectTimeLayer()
 	}
 }
 // Toggles between chart types defined in the dashboard component

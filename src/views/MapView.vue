@@ -17,6 +17,7 @@ import { useDialogStore } from '../store/dialogStore';
 
 import ComponentMapChart from '../components/components/ComponentMapChart.vue';
 import MapContainer from '../components/map/MapContainer.vue';
+import Assistants from '../components/components/assistants.vue';
 
 const contentStore = useContentStore();
 const dialogStore = useDialogStore();
@@ -40,6 +41,8 @@ const parseMapLayers = computed(() => {
 			</div>
 			<!-- other dashboards that have components -->
 			<div v-else-if="contentStore.currentDashboard.content.length !== 0" class="map-charts">
+				<!-- Perhaps later, the option to display the assistant service can be added as a parameter to the contentStore -->
+				<Assistants v-if="true"/>
 				<ComponentMapChart v-for="item in parseMapLayers.hasMap" :content="item"
 					:key="`map-layer-${item.index}-${contentStore.currentDashboard.index}`" />
 				<h2>基本圖層</h2>

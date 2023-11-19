@@ -2,7 +2,7 @@
 
 <!-- This component has three modes 'normal dashboard' / 'more info' / 'basic map layers' -->
 <!-- The different modes are controlled by the props "notMoreInfo" (default true) and "isMapLayer" (default false) -->
-
+<!-- 儀表板總覽-各圖表 -->
 <script setup>
 import { computed, ref } from 'vue';
 import { useDialogStore } from '../../store/dialogStore';

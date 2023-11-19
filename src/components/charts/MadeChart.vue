@@ -3,7 +3,7 @@
 <script setup>
 import { computed, defineProps, ref } from "vue";
 import dayjs from "dayjs";
-// import { useMapStore } from "../../store/mapStore";
+import { useMapStore } from "../../store/mapStore";
 
 const props = defineProps([
 	"chart_config",
@@ -11,7 +11,7 @@ const props = defineProps([
 	"series",
 	"map_config",
 ]);
-// const mapStore = useMapStore();
+const mapStore = useMapStore();
 
 // How many data points to show before summing all remaining points into "other"
 // const steps = ref(4);
@@ -148,7 +148,22 @@ function handleDataSelection(e, chartContext, config) {
 	// 	selectedIndex.value = null;
 	// }
 }
-
+const handleDataSelection2 = (e, chartContext, config) => {
+	const toParse = props.series[0].data[selectedIndex.value].data.sort((a, b) => b.Carbon - a.Carbon);
+	console.log(toParse[config.dataPointIndex].Route_Name)
+	console.log(config.dataPointIndex)
+	if (config.dataPointIndex == 6) {
+		// 顯示其他
+		let cond = []
+		for (let i = 0; i < 6; i++) {
+			cond.push(toParse[i].Route_Name)
+		}
+		mapStore.addLayerFilter('test_route-3DRoute', 'RouteName', cond, props.map_config[0])
+	} else {
+		const cond = [toParse[config.dataPointIndex].Route_Name]
+		mapStore.addLayerFilter('test_route-3DRoute', 'RouteName', cond, props.map_config[0])
+	}
+}
 const touchBack = () => {
 	touchDown.value = false;
 };
@@ -175,6 +190,7 @@ const touchBack = () => {
 				type="donut"
 				:options="chartOptions2"
 				:series="parsedSeries2"
+				@dataPointSelection="handleDataSelection2"
 			>
 			</apexchart>
 		</div>

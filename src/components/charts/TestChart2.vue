@@ -323,11 +323,21 @@ const drawscreen = (ctx) => {
 onMounted(() => {
 	getCanvas();
 });
+
+const getTarget = () => {
+	console.log(document.getElementById("canvas"));
+};
 </script>
 
 <template>
 	<div v-if="activeChart === 'TestChart2'" class="TestChart2">
-		<canvas id="canvas" ref="test" width="400" height="400"></canvas>
+		<canvas
+			@click="getTarget"
+			id="canvas"
+			ref="test"
+			width="400"
+			height="400"
+		></canvas>
 		<!-- <apexchart
 			width="100%"
 			type="polarArea"

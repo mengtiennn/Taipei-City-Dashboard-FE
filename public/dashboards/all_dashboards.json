@@ -51,7 +51,7 @@
 		{
 			"name": "實驗組件",
 			"index": "testing2",
-			"components": ["148", "149", "150", "151"],
+			"components": ["149", "150", "152"],
 			"icon": "bug_report"
 		},
 		{

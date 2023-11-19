@@ -2,7 +2,7 @@
 
 <script setup>
 import { computed, defineProps, ref } from "vue";
-import { useMapStore } from "../../store/mapStore";
+// import { useMapStore } from "../../store/mapStore";
 
 const props = defineProps([
 	"chart_config",
@@ -10,22 +10,24 @@ const props = defineProps([
 	"series",
 	"map_config",
 ]);
-const mapStore = useMapStore();
+// const mapStore = useMapStore();
 
 // How many data points to show before summing all remaining points into "other"
-const steps = ref(4);
 
 // Donut charts in apexcharts uses a slightly different data format from other chart types
 // As such, the following parsing functions are required
 const parsedSeries = computed(() => {
 	if (!props.series[0].data) return;
 	var toParse;
-	// const data = props.series[0].data;
 	const data = [...props.series[0].data];
+	const check = localStorage.getItem("data");
+	if (!check) {
+		localStorage.setItem("data", JSON.stringify(data));
+	}
 	data.forEach((item) => {
 		if (switchCheck.value) {
-			item.data.sort();
-			toParse = [...props.series[0].data];
+			console.log(JSON.parse(localStorage.getItem("data")));
+			toParse = JSON.parse(localStorage.getItem("data"));
 		} else {
 			item.data.sort((a, b) => b - a);
 			toParse = [...props.series[0].data];
@@ -36,104 +38,96 @@ const parsedSeries = computed(() => {
 	// });
 	return toParse;
 });
-const parsedLabels = computed(() => {
-	const toParse = [...props.series[0].data];
-	if (toParse.length <= steps.value) {
-		return toParse.map((item) => item.x);
-	}
-	let output = [];
-	for (let i = 0; i < steps.value; i++) {
-		output.push(toParse[i].x);
-	}
-	output.push("其他");
-	return output;
-});
+// const switchDate = computed(() => {
+// 	console.log(switchCheck.value);
+// 	if (switchCheck.value) {
+// 		return [
+// 			"2023-05",
+// 			"2023-06",
+// 			"2023-07",
+// 			"2023-08",
+// 			"2023-09",
+// 			"2023-10",
+// 		];
+// 	} else {
+// 		return [
+// 			"2023-10",
+// 			"2023-09",
+// 			"2023-08",
+// 			"2023-07",
+// 			"2023-06",
+// 			"2023-05",
+// 		];
+// 	}
+// });
 
 // chartOptions needs to be in the bottom since it uses computed data
 const chartOptions = ref({
 	chart: {
-		type: "bar",
-		stacked: true,
+		height: 350,
+		type: "line",
+		foreColor: "#333",
 	},
 	stroke: {
-		width: 1,
-		colors: ["#fff"],
+		width: [0, 4],
 	},
+	// title: {
+	// 	text: "Traffic Sources",
+	// },
 	dataLabels: {
-		formatter: (val) => {
-			return val / 1000 + "K";
+		enabled: true,
+		enabledOnSeries: [1],
+		formatter: function (val) {
+			return val;
 		},
 	},
-	plotOptions: {
-		bar: {
-			horizontal: false,
-		},
-	},
+	// tooltip: {
+	// 	followCursor: false,
+	// 	custom: function ({ series, seriesIndex, w }) {
+	// 		// The class "chart-tooltip" could be edited in /assets/styles/chartStyles.css
+	// 		return (
+	// 			'<div class="chart-tooltip">' +
+	// 			"<h6>" +
+	// 			w.globals.labels[seriesIndex] +
+	// 			"</h6>" +
+	// 			"<span>" +
+	// 			series[seriesIndex] +
+	// 			` ${props.chart_config.unit}` +
+	// 			"</span>" +
+	// 			"</div>"
+	// 		);
+	// 	},
+	// },
+	labels: ["2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10"],
 	xaxis: {
-		// categories: [
-		// 	"Online advertising",
-		// 	"Sales Training",
-		// 	"Print advertising",
-		// 	"Catalogs",
-		// 	"Meetings",
-		// 	"Public relations",
-		// ],
-		// labels: {
-		// 	formatter: function (val) {
-		// 		return val + 123;
-		// 	},
-		// },
+		show: false,
 	},
-	fill: {
-		opacity: 1,
-	},
-	colors: ["#80c7fd", "#008FFB", "#80f1cb", "#00E396"],
-	yaxis: {
-		labels: {
-			formatter: (val) => {
-				return val / 1000 + "K";
+	yaxis: [
+		{
+			title: {
+				text: "Website Blog",
 			},
 		},
-	},
-	legend: {
-		position: "top",
-		horizontalAlign: "left",
-	},
+		{
+			opposite: true,
+			title: {
+				text: "Social Media",
+			},
+		},
+	],
 });
 
-const selectedIndex = ref(null);
-
-function handleDataSelection(e, chartContext, config) {
-	if (!props.chart_config.map_filter) {
-		return;
-	}
-	if (config.dataPointIndex !== selectedIndex.value) {
-		mapStore.addLayerFilter(
-			`${props.map_config[0].index}-${props.map_config[0].type}`,
-			props.chart_config.map_filter[0],
-			props.chart_config.map_filter[1][config.dataPointIndex]
-		);
-		selectedIndex.value = config.dataPointIndex;
-	} else {
-		mapStore.clearLayerFilter(
-			`${props.map_config[0].index}-${props.map_config[0].type}`
-		);
-		selectedIndex.value = null;
-	}
-}
 const switchCheck = ref(true);
 </script>
 
 <template>
-	<div v-if="activeChart === 'TestChart3'" class="TestChart3">
+	<div v-if="activeChart === 'TestChart4'" class="TestChart4">
 		<apexchart
 			width="100%"
-			type="bar"
+			type="line"
 			:options="chartOptions"
 			:series="parsedSeries"
-			@dataPointSelection="handleDataSelection"
-		>
-		</apexchart>
+		></apexchart>
 		<label class="switch">
 			<input type="checkbox" v-model="switchCheck" />
 			<span class="slider round"></span>
@@ -142,7 +136,7 @@ const switchCheck = ref(true);
 </template>
 
 <style scoped lang="scss">
-.TestChart3 {
+.TestChart4 {
 	height: 100%;
 	width: 100%;
 	display: flex;

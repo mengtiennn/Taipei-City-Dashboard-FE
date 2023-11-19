@@ -25,7 +25,7 @@ const parsedSeries = computed(() => {
 		localStorage.setItem("data", JSON.stringify(data));
 	}
 	data.forEach((item) => {
-		if (switchCheck.value) {
+		if (!switchCheck.value) {
 			console.log(JSON.parse(localStorage.getItem("data")));
 			toParse = JSON.parse(localStorage.getItem("data"));
 		} else {
@@ -117,21 +117,31 @@ const chartOptions = ref({
 	],
 });
 
-const switchCheck = ref(true);
+const switchCheck = ref(false);
 </script>
 
 <template>
 	<div v-if="activeChart === 'TestChart4'" class="TestChart4">
+		<div
+			style="
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				align-self: flex-start;
+			"
+		>
+			排列
+			<label class="switch">
+				<input type="checkbox" v-model="switchCheck" />
+				<span class="slider round"></span>
+			</label>
+		</div>
 		<apexchart
 			width="100%"
 			type="line"
 			:options="chartOptions"
 			:series="parsedSeries"
 		></apexchart>
-		<label class="switch">
-			<input type="checkbox" v-model="switchCheck" />
-			<span class="slider round"></span>
-		</label>
 	</div>
 </template>
 

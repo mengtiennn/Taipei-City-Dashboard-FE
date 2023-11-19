@@ -14,5 +14,6 @@ export const chartTypes = {
 	TestChart: "圓餅花圖",
 	TestChart2: "圓餅花圖2",
 	TestChart3: "group圖",
+	TestChart4: "直條曲線圖",
 	MadeChart: "融合圖表",
 };

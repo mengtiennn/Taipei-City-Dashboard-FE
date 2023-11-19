@@ -149,6 +149,11 @@ function handleDataSelection(e, chartContext, config) {
 	// }
 }
 
+const handleDataSelection2 = (e, chartContext, config) => {
+	console.log("config", config);
+	console.log("chartContext", chartContext);
+};
+
 const touchBack = () => {
 	touchDown.value = false;
 };
@@ -175,6 +180,7 @@ const touchBack = () => {
 				type="donut"
 				:options="chartOptions2"
 				:series="parsedSeries2"
+				@dataPointSelection="handleDataSelection2"
 			>
 			</apexchart>
 		</div>

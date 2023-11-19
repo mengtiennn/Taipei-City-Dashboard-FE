@@ -4258,7 +4258,7 @@
 				}
 			],
 			"chart_config": {
-				"types": ["TestChart2", "BarChart"],
+				"types": ["TestChart2"],
 				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
 				"unit": "件"
 			},
@@ -4304,8 +4304,53 @@
 				}
 			],
 			"chart_config": {
-				"types": ["TestChart3", "BarChart"],
+				"types": ["TestChart3"],
 				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
+				"unit": "件"
+			},
+			"name": "gruop組件",
+			"source": "鴻海",
+			"time_from": "2023-11-11T00:00:00+08:00",
+			"time_to": null,
+			"short_desc": "",
+			"long_desc": "測試組件的說明",
+			"use_case": "測試組件的情境",
+			"tags": [],
+			"links": [
+				"https://tuic.gov.taipei/youbike",
+				"https://github.com/tpe-doit/YouBike-Optimization"
+			],
+			"contributors": ["tuic"]
+		},
+		"152": {
+			"id": 152,
+			"index": "TestChart4",
+			"map_config": [
+				{
+					"index": "TestChart4",
+					"type": "fill",
+					"paint": {
+						"fill-color": [
+							"match",
+							["get", "category"],
+							"#d1a26c",
+							"#b9734a",
+							"#9f4333",
+							"#800026"
+						],
+						"fill-opacity": 0.8
+					},
+					"property": [
+						{
+							"key": "category",
+							"name": "總體需求"
+						}
+					],
+					"title": "潛在需求"
+				}
+			],
+			"chart_config": {
+				"types": ["TestChart4"],
 				"unit": "件"
 			},
 			"name": "gruop組件",

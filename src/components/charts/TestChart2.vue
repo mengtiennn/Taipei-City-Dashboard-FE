@@ -163,12 +163,15 @@ const drawSector = (ctx, x, y, r, sDeg, eDeg) => {
 	// 还原到最初保存的状态
 	ctx.restore();
 };
-
 const drawscreen = (ctx) => {
 	var deg = Math.PI / 180;
+	var begin_deg = (-90 * Math.PI) / 180;
+	var total = 0;
 	let ob = [
 		// group1
 		{
+			value: 100,
+			name: "1月",
 			x: 200,
 			y: 200,
 			r: 100,
@@ -177,6 +180,8 @@ const drawscreen = (ctx) => {
 			style: "#d8ae2d",
 		},
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 50,
@@ -185,6 +190,8 @@ const drawscreen = (ctx) => {
 			style: "#5f9747",
 		},
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 20,
@@ -193,6 +200,8 @@ const drawscreen = (ctx) => {
 			style: "#2986cc",
 		},
 		{
+			value: 150,
+			name: "2月",
 			x: 200,
 			y: 200,
 			r: 150,
@@ -201,6 +210,8 @@ const drawscreen = (ctx) => {
 			style: "#d8ae2d",
 		},
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 90,
@@ -208,8 +219,9 @@ const drawscreen = (ctx) => {
 			eDeg: 80,
 			style: "#5f9747",
 		},
-		// group2
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 35,
@@ -218,6 +230,8 @@ const drawscreen = (ctx) => {
 			style: "#2986cc",
 		},
 		{
+			value: 50,
+			name: "3月",
 			x: 200,
 			y: 200,
 			r: 50,
@@ -226,6 +240,8 @@ const drawscreen = (ctx) => {
 			style: "#d8ae2d",
 		},
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 30,
@@ -233,8 +249,9 @@ const drawscreen = (ctx) => {
 			eDeg: 150,
 			style: "#5f9747",
 		},
-		// group3
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 10,
@@ -243,6 +260,8 @@ const drawscreen = (ctx) => {
 			style: "#2986cc",
 		},
 		{
+			value: 80,
+			name: "4月",
 			x: 200,
 			y: 200,
 			r: 80,
@@ -251,6 +270,8 @@ const drawscreen = (ctx) => {
 			style: "#d8ae2d",
 		},
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 60,
@@ -258,8 +279,9 @@ const drawscreen = (ctx) => {
 			eDeg: 270,
 			style: "#5f9747",
 		},
-		// group4
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 30,
@@ -268,6 +290,8 @@ const drawscreen = (ctx) => {
 			style: "#2986cc",
 		},
 		{
+			value: 120,
+			name: "5月",
 			x: 200,
 			y: 200,
 			r: 120,
@@ -276,6 +300,8 @@ const drawscreen = (ctx) => {
 			style: "#d8ae2d",
 		},
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 100,
@@ -283,8 +309,9 @@ const drawscreen = (ctx) => {
 			eDeg: 360,
 			style: "#5f9747",
 		},
-		// group5
 		{
+			value: 0,
+			name: "",
 			x: 200,
 			y: 200,
 			r: 90,
@@ -293,7 +320,12 @@ const drawscreen = (ctx) => {
 			style: "#2986cc",
 		},
 	];
+	for (var j = 0; j < ob.length; j++) {
+		total += parseInt(ob[j].value);
+	}
 	for (var i = 0; i < ob.length; i++) {
+		var value_deg = ((ob[i].value / total) * 360 * Math.PI) / 180;
+		var end_deg = begin_deg + value_deg;
 		drawSector(
 			ctx,
 			ob[i].x,
@@ -307,6 +339,25 @@ const drawscreen = (ctx) => {
 		ctx.stroke();
 		ctx.fillStyle = ob[i].style;
 		ctx.fill();
+
+		var text_deg = begin_deg + value_deg / 1;
+		var text_X = ob[i].x + (ob[i].r + 20) * Math.cos(text_deg);
+		var text_Y = ob[i].y + (ob[i].r + 20) * Math.sin(text_deg);
+
+		if (
+			text_deg > (90 * Math.PI) / 180 &&
+			text_deg < (270 * Math.PI) / 180
+		) {
+			ctx.textAlign = "end";
+		}
+
+		// 填入文字
+		ctx.font = "16px Arial";
+		ctx.fillStyle = "#fff";
+		var text = ob[i].name;
+
+		ctx.fillText(text, text_X, text_Y);
+		begin_deg = end_deg;
 	}
 	// let ob = {
 	// 	x: 200,
@@ -331,6 +382,20 @@ const getTarget = () => {
 
 <template>
 	<div v-if="activeChart === 'TestChart2'" class="TestChart2">
+		<div class="lineList">
+			<div>
+				<div class="drive"></div>
+				<span style="color: rgb(216, 174, 45)">欣欣客運</span>
+			</div>
+			<div>
+				<div class="drive2"></div>
+				<span style="color: rgb(95, 151, 71)">首都客運</span>
+			</div>
+			<div>
+				<div class="drive3"></div>
+				<span style="color: rgb(42, 134, 204)">台北客運</span>
+			</div>
+		</div>
 		<canvas
 			@click="getTarget"
 			id="canvas"
@@ -358,5 +423,38 @@ const getTarget = () => {
 	align-items: center;
 	position: relative;
 	overflow-y: visible;
+	.lineList {
+		display: flex;
+		flex-direction: column;
+		width: 150px;
+		font-size: 10px;
+		gap: 5px;
+		div {
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+		}
+		.drive {
+			width: 30px;
+			height: 10px;
+			border-radius: 10px;
+			background-color: rgb(216, 174, 45);
+			margin-right: 5px;
+		}
+		.drive2 {
+			width: 30px;
+			height: 10px;
+			border-radius: 10px;
+			background-color: rgb(95, 151, 71);
+			margin-right: 5px;
+		}
+		.drive3 {
+			width: 30px;
+			height: 10px;
+			border-radius: 10px;
+			background-color: rgb(42, 134, 204);
+			margin-right: 5px;
+		}
+	}
 }
 </style>

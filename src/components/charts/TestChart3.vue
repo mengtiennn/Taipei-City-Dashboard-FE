@@ -12,9 +12,6 @@ const props = defineProps([
 ]);
 const mapStore = useMapStore();
 
-// How many data points to show before summing all remaining points into "other"
-const steps = ref(4);
-
 // Donut charts in apexcharts uses a slightly different data format from other chart types
 // As such, the following parsing functions are required
 const parsedSeries = computed(() => {
@@ -35,18 +32,6 @@ const parsedSeries = computed(() => {
 	// 	console.log(item);
 	// });
 	return toParse;
-});
-const parsedLabels = computed(() => {
-	const toParse = [...props.series[0].data];
-	if (toParse.length <= steps.value) {
-		return toParse.map((item) => item.x);
-	}
-	let output = [];
-	for (let i = 0; i < steps.value; i++) {
-		output.push(toParse[i].x);
-	}
-	output.push("其他");
-	return output;
 });
 
 // chartOptions needs to be in the bottom since it uses computed data

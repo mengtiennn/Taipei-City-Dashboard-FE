@@ -2,6 +2,7 @@
 
 <script setup>
 import { computed, defineProps, ref } from "vue";
+import mapLayerSeletor from '../components/mapLayerSeletor.vue';
 // import { useMapStore } from "../../store/mapStore";
 
 const props = defineProps([
@@ -122,19 +123,22 @@ const switchCheck = ref(false);
 
 <template>
 	<div v-if="activeChart === 'TestChart4'" class="TestChart4">
-		<div
-			style="
-				display: flex;
-				align-items: center;
-				gap: 5px;
-				align-self: flex-start;
-			"
-		>
-			排列
-			<label class="switch">
-				<input type="checkbox" v-model="switchCheck" />
-				<span class="slider round"></span>
-			</label>
+		<div class="selector">
+			<div
+				style="
+					display: flex;
+					align-items: center;
+					gap: 5px;
+					align-self: flex-start;
+				"
+			>
+				排列
+				<label class="switch">
+					<input type="checkbox" v-model="switchCheck" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<!-- <mapLayerSeletor/>	 -->
 		</div>
 		<apexchart
 			width="100%"
@@ -157,6 +161,9 @@ const switchCheck = ref(false);
 	overflow-y: visible;
 	:deep(.apexcharts-toolbar) {
 		display: none;
+	}
+	.selector {
+		display: flex;
 	}
 }
 .switch {

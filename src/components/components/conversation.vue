@@ -8,150 +8,77 @@ const dialogStore = useDialogStore()
 const emit = defineEmits(['open'])
 const handleLineClick = (e) => {
 	const cc =  {
-		"id": 22,
-		"index": "traffic_accident",
+		"id": 151,
+		"index": "TestChart3",
 		"map_config": [
 			{
-				"heatmap": {
-					"filter": "type",
-					"zoom": 16.5
-				},
-				"index": "traffic_accident_location_view",
+				"index": "TestChart3",
+				"type": "fill",
 				"paint": {
-					"circle-color": [
+					"fill-color": [
 						"match",
-						[
-							"get",
-							"type"
-						],
-						"1",
-						"#CA0020",
-						"2",
-						"#ff996d",
-						"3",
-						"#f8c3ac",
-						"#ccc"
-					]
+						["get", "category"],
+						"#d1a26c",
+						"#b9734a",
+						"#9f4333",
+						"#800026"
+					],
+					"fill-opacity": 0.8
 				},
 				"property": [
 					{
-						"key": "location",
-						"name": "位置"
-					},
-					{
-						"key": "type",
-						"name": "處理別"
-					},
-					{
-						"key": "occur_time",
-						"name": "時間"
+						"key": "category",
+						"name": "總體需求"
 					}
 				],
-				"type": "circle",
-				"size": null,
-				"icon": "heatmap",
-				"title": "交通事故統計"
+				"title": "潛在需求"
 			}
 		],
 		"chart_config": {
-			"color": [
-				"#CA0020",
-				"#ff996d",
-				"#f8c3ac"
-			],
-			"types": [
-				"DonutChart",
-				"BarChart"
-			],
-			"unit": "件",
-			"map_filter": [
-				"type",
-				[
-					"1",
-					"2",
-					"3"
-				]
-			]
+			"types": ["TestChart3"],
+			"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
+			"unit": "件"
 		},
-		"history_data": [
-			{
-				"name": "",
-				"data": [
-					{
-						"y": 7929,
-						"x": "2023-01-01T00:00:00+08:00"
-					},
-					{
-						"y": 10305,
-						"x": "2022-12-01T00:00:00+08:00"
-					},
-					{
-						"y": 9106,
-						"x": "2022-11-01T00:00:00+08:00"
-					},
-					{
-						"y": 8663,
-						"x": "2022-10-01T00:00:00+08:00"
-					},
-					{
-						"y": 8836,
-						"x": "2022-09-01T00:00:00+08:00"
-					},
-					{
-						"y": 25107,
-						"x": "2022-08-01T00:00:00+08:00"
-					},
-					{
-						"y": 26664,
-						"x": "2022-07-01T00:00:00+08:00"
-					},
-					{
-						"y": 22941,
-						"x": "2022-06-01T00:00:00+08:00"
-					},
-					{
-						"y": 1533,
-						"x": "2022-05-01T00:00:00+08:00"
-					}
-				]
-			}
-		],
-		"source": "警察局",
-		"time_from": "2023-01-31T14:01:00+08:00",
-		"time_to": null,
-		"update_freq": null,
-		"update_freq_unit": null,
-		"name": "交通事故統計",
-		"short_desc": "顯示三至四個月前的交通事故統計及熱力圖",
-		"long_desc": "顯示三至四個月前的交通事故統計及熱力圖，資料來源為台北市交通局內部資料，每月更新。",
-		"use_case": "透過交通事故的統計資料與熱力圖的呈現，我們能更直觀地了解台北市3~4個月前的交通事故情況，並尋找可能的高風險地區。",
-		"links": [
-			"https://data.taipei/dataset/detail?id=0554bac7-cbc2-4ef3-a55e-0aad3dd4ee1d",
-			"https://data.taipei/dataset/detail?id=2f238b4f-1b27-4085-93e9-d684ef0e2735"
-		],
-		"tags": [],
-		"contributors": [
-			"tuic"
-		],
 		"chart_data": [
 			{
 				"name": "",
 				"data": [
 					{
-						"x": "A1",
-						"y": 5
+						"x": "2023/01/01",
+						"y": 300,
+						"data": [1, 2, 3, 4]
 					},
 					{
-						"x": "A2",
-						"y": 2495
+						"x": "2023/04/01",
+						"y": 496,
+						"data": [1, 3, 2, 4]
 					},
 					{
-						"x": "A3",
-						"y": 2162
+						"x": "2023/07/01",
+						"y": 457,
+						"data": [2, 3, 1, 4]
+					},
+					{
+						"x": "2023/10/01",
+						"y": 403,
+						"data": [3, 4, 2, 1]
 					}
 				]
 			}
-		]
+		],
+		"name": "綠化路線新增量與累計量",
+		"source": "鴻海",
+		"time_from": "2023-11-11T00:00:00+08:00",
+		"time_to": null,
+		"short_desc": "",
+		"long_desc": "測試組件的說明",
+		"use_case": "測試組件的情境",
+		"tags": [],
+		"links": [
+			"https://tuic.gov.taipei/youbike",
+			"https://github.com/tpe-doit/YouBike-Optimization"
+		],
+		"contributors": ["tuic"]
 	}
   
 	dialogStore.showMoreInfo(cc)

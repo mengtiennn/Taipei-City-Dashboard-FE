@@ -17,7 +17,7 @@ const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition
 const speechR = new Recognition()
 const recorderTxt = ref('')
 const voice = ref(null)
-const text = ref('目前顯示三至四個月前的交通事故統計及熱力圖，資料來源為台北市交通局內部資料')
+const text = ref('關於台北市電動巴士的涵蓋率可參考此圖表')
 const text2 = ref('目前顯示三至四個月前的交通事故統計及熱力圖，資料來源為台北市交通局內部資料')
 const text3 = ref('目前顯示三至四個月前的交通事故統計及熱力圖，資料來源為台北市交通局內部資料')
 const text4 = ref('聽不清楚，請再說一次')
@@ -83,14 +83,14 @@ const playRequest = (sp) => {
   }
 }
 const judge = () => {
-  const keywordsA = ['交通事故']
+  const keywordsA = ['路線', '涵蓋率', '電動']
   const keywordsB = ['']
   const keywordsC = ['']
 
   for (let i = 0; i < keywordsA.length; i++) {
     if (recorderTxt.value.includes(keywordsA[i])) {
       console.log("題目一")
-      assistant.textScript.push({ content: `<span>${recorderTxt.value}</span>`, time: dayjs(new Date()).format('HH:mm') }, { content: `<span>目前顯示三至四個月前的交通事故統計及熱力圖，資料來源為台北市交通局內部資料</span>`, time: dayjs(new Date()).format('HH:mm') })
+      assistant.textScript.push({ content: `<span>${textVal.value}</span>`, time: dayjs(new Date()).format('HH:mm') }, { content: '<div style="display: flex; gap:2px;">關於台北市電動巴士的涵蓋率可參考此圖表</div><div style="margin-top: 5px;display: flex; gap: 9px; cursor: pointer; align-items: center;"><span style="color: #9E8EFF; font-weight: 700; font-size: 14px;" >查看圖表</span><span style="color: #9E8EFF; font-weight: 700; font-size: 14px;" >匯入列表中查看</span></div>', time: dayjs(new Date()).format('HH:mm') })
       // setTimeout(() => {
       //   status.scrollVal = conversationD.value.scrollHeight
       //   conversationD.value.scrollTo({
@@ -98,6 +98,7 @@ const judge = () => {
       //     behavior: "smooth",
       //   })
       // }, 500)
+      textVal.value = ''
       playRequest(speech)
       return
     }
@@ -127,7 +128,7 @@ const judge = () => {
       </div>
       <div class="assistantWrapper-textOrAudio">
         <img src="../../assets/images/Mic.svg" alt="mic" @click="startTTS()">
-        <div class="assistantWrapper-circle"></div>
+        <!-- <div class="assistantWrapper-circle"></div> -->
         <input type="text" v-model="textVal">
         <img src="../../assets/images/Vector.svg" alt="send" @click="sendQuestion()">
       </div>

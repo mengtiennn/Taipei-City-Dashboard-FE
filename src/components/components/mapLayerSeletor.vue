@@ -3,15 +3,20 @@ import { reactive, ref, onMounted, nextTick } from 'vue'
 import { useAssistant } from '../../store/assistantStore'
 import { useDialogStore } from '../../store/dialogStore'
 import { useMapStore } from '../../store/mapStore'
+import { useContentStore } from '../../store/contentStore';
 import MoreInfo from '../dialogs/MoreInfo.vue'
 import dayjs from 'dayjs'
+const contentStore = useContentStore();
 const assistant = useAssistant()
 const dialogStore = useDialogStore()
 const mapStore = useMapStore()
 const emit = defineEmits(['open'])
-const selectVal = ref(dayjs().month() + 1)
+// const selectVal = ref(dayjs().month() + 1)
+const selectVal = ref(6)
 const selectTime = () => {
-	mapStore.selectFilter(selectVal.value)
+	mapStore.selectFilterBus(selectVal.value)
+  // mapStore.addLayerFilter('test_route-3DRoute', )
+  // mapStore.addLayerFilter('test_route-3DRoute', 'RouteName', cond, props.map_config[0])
 }
 onMounted(async () => {
 })
@@ -22,8 +27,8 @@ onMounted(async () => {
     <input
       class="seleterContainer-select"
       type="range"
-      min="1"
-      max="12"
+      min="6"
+      max="10"
       step="1"
       v-model="selectVal"
       @change="selectTime()"

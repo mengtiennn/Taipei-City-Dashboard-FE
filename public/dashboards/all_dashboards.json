@@ -49,7 +49,7 @@
 			"icon": "bug_report"
 		},
 		{
-			"name": "實驗組件",
+			"name": "韌性的電動巴士",
 			"index": "testing2",
 			"components": ["149", "150", "152"],
 			"icon": "bug_report"
@@ -64,6 +64,7 @@
 			"name": "圖資資訊",
 			"index": "map-layers",
 			"components": [
+				"592",
 				"32",
 				"15",
 				"105",
@@ -75,8 +76,7 @@
 				"9",
 				"16",
 				"30",
-				"106",
-				"592"
+				"106"
 			],
 			"icon": "public"
 		}

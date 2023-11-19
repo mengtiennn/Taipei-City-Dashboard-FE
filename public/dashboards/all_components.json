@@ -4431,7 +4431,7 @@
 			},
 			"chart_data": [1, 2, 3, 4, 5, 6, 7, 8],
 			"name": "測試組件1",
-			"source": "鴻海",
+			"source": "城市數據先鋒",
 			"time_from": "2023-11-11T00:00:00+08:00",
 			"time_to": null,
 			"short_desc": "",
@@ -4453,24 +4453,7 @@
 					"paint": {
 						"routeLineColor": "#76cd97"
 					},
-					"property": [
-						{
-							"key": "station",
-							"name": "場站名稱"
-						},
-						{
-							"key": "station_id",
-							"name": "場站ID"
-						},
-						{
-							"key": "total_bikes",
-							"name": "總車輛數"
-						},
-						{
-							"key": "left_bikes",
-							"name": "剩餘車輛"
-						}
-					],
+					"property": [],
 					"maxzoom": 9,
 					"type": "3DRoute",
 					"title": "test_route"
@@ -4481,8 +4464,8 @@
 				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
 				"unit": "件"
 			},
-			"name": "融合組件",
-			"source": "鴻海",
+			"name": "電動巴士減碳貢獻量",
+			"source": "城市數據先鋒",
 			"time_from": "2023-11-11T00:00:00+08:00",
 			"time_to": null,
 			"short_desc": "",
@@ -4500,26 +4483,47 @@
 			"index": "TestChart2",
 			"map_config": [
 				{
-					"index": "TestChart2",
-					"type": "fill",
+					"index": "bus_total",
 					"paint": {
-						"fill-color": [
-							"match",
-							["get", "category"],
-							"#d1a26c",
-							"#b9734a",
-							"#9f4333",
-							"#800026"
+						"circle-opacity": 0,
+						"circle-radius": [
+							"interpolate",
+							[
+								"linear"
+							],
+							[
+								"to-number",
+								[
+									"get",
+									"EBUS_QTY"
+								]
+							],
+							0,
+							2.5,
+							50,
+							1,
+							50000,
+							100
 						],
-						"fill-opacity": 0.8
+						"circle-stroke-color": "#8bc34a",
+						"circle-stroke-width": 1.5
 					},
 					"property": [
 						{
-							"key": "category",
-							"name": "總體需求"
+							"key": "operatorno",
+							"name": "operatorno"
+						},
+						{
+							"key": "operatorname",
+							"name": "operatorname"
+						},
+						{
+							"key": "EBUS_QTY",
+							"name": "EBUS_QTY"
 						}
 					],
-					"title": "潛在需求"
+					"type": "circle",
+					"title": "電動巴士業者涵蓋"
 				}
 			],
 			"chart_config": {
@@ -4527,8 +4531,8 @@
 				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
 				"unit": "件"
 			},
-			"name": "三維組件",
-			"source": "鴻海",
+			"name": "Top 3客運業者電巴數量",
+			"source": "城市數據先鋒",
 			"time_from": "2023-11-11T00:00:00+08:00",
 			"time_to": null,
 			"short_desc": "",
@@ -4573,8 +4577,8 @@
 				"color": ["#d1a26c", "#b9734a", "#9f4333", "#800026"],
 				"unit": "件"
 			},
-			"name": "gruop組件",
-			"source": "鴻海",
+			"name": "綠化路線新增量與累計量",
+			"source": "城市數據先鋒",
 			"time_from": "2023-11-11T00:00:00+08:00",
 			"time_to": null,
 			"short_desc": "",
@@ -4590,36 +4594,47 @@
 		"152": {
 			"id": 152,
 			"index": "TestChart4",
+			"selectTime": true,
 			"map_config": [
 				{
-					"index": "TestChart4",
-					"type": "fill",
+					"index": "test_route",
 					"paint": {
-						"fill-color": [
-							"match",
-							["get", "category"],
-							"#d1a26c",
-							"#b9734a",
-							"#9f4333",
-							"#800026"
-						],
-						"fill-opacity": 0.8
+						"routeLineColor": "#76cd97"
 					},
-					"property": [
+					"property": [],
+					"maxzoom": 9,
+					"type": "3DRoute",
+					"title": "test_route",
+					"selectChildren": [
 						{
-							"key": "category",
-							"name": "總體需求"
+							"Month":"6",
+							"Route_Green": ["羅斯福路幹線","中山幹線", "承德幹線" ,"民權幹線"]
+						},
+						{
+							"Month":"7",
+							"Route_Green": ["羅斯福路幹線","中山幹線", "承德幹線" ,"民權幹線","和平幹線" ,"信義幹線" ,"208","236區"]
+						},
+						{
+							"Month":"8",
+							"Route_Green": ["羅斯福路幹線","中山幹線", "承德幹線" ,"民權幹線","和平幹線" ,"信義幹線" ,"208","236區","251","251區" ,"262","284","292","307","557"]
+						},
+						{
+							"Month":"9",
+							"Route_Green": ["羅斯福路幹線","中山幹線", "承德幹線" ,"民權幹線","和平幹線" ,"信義幹線" ,"208","236區"  ,"251","251區" ,"262","284","292","307","557","66","902","957","紅12"]
+						},
+						{
+							"Month":"10",
+							"Route_Green": ["羅斯福路幹線","中山幹線", "承德幹線" ,"民權幹線","和平幹線" ,"信義幹線" ,"208","236區"  ,"251","251區" ,"262","284","292","307","557","66","902","957","紅12","藍36","棕2"]
 						}
-					],
-					"title": "潛在需求"
+					]
 				}
 			],
 			"chart_config": {
 				"types": ["TestChart4"],
 				"unit": "件"
 			},
-			"name": "gruop組件",
-			"source": "鴻海",
+			"name": "綠化路線新增量與累計量",
+			"source": "城市數據先鋒",
 			"time_from": "2023-11-11T00:00:00+08:00",
 			"time_to": null,
 			"short_desc": "",

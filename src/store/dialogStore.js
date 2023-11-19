@@ -67,6 +67,7 @@ export const useDialogStore = defineStore("dialog", {
 		},
 		// Show the more info dialog and update the content
 		showMoreInfo(content) {
+			console.log(content)
 			this.showDialog("moreInfo");
 			this.moreInfoContent = content;
 		},

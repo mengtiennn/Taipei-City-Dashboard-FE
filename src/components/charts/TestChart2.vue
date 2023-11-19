@@ -393,7 +393,7 @@ const getTarget = () => {
 			</div>
 			<div>
 				<div class="drive3"></div>
-				<span style="color: rgb(42, 134, 204)">台北客運</span>
+				<span style="color: rgb(42, 134, 204)">指南客運</span>
 			</div>
 		</div>
 		<canvas

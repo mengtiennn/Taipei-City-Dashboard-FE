@@ -173,7 +173,7 @@ const touchBack = () => {
 	<div v-if="activeChart === 'MadeChart'" class="MadeChart">
 		<div v-if="!touchDown">
 			<apexchart
-				width="100%"
+				width="400px"
 				height="100%"
 				type="bar"
 				:options="chartOptions"
@@ -201,16 +201,17 @@ const touchBack = () => {
 .MadeChart {
 	height: 100%;
 	width: 100%;
+	// border: 1px solid red;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	// justify-content: center;
+	// align-items: center;
 	position: relative;
 	overflow-y: visible;
 	:deep(.apexcharts-toolbar) {
 		display: none;
 	}
 	position: relative;
-	padding-top: 20px;
+	// padding-top: 20px;
 	.donutChart {
 		position: absolute;
 		padding-top: 30px;

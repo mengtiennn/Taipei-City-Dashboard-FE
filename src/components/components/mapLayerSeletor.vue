@@ -12,7 +12,7 @@ const dialogStore = useDialogStore()
 const mapStore = useMapStore()
 const emit = defineEmits(['open'])
 // const selectVal = ref(dayjs().month() + 1)
-const selectVal = ref(6)
+const selectVal = ref(10)
 const selectTime = () => {
 	mapStore.selectFilterBus(selectVal.value)
   // mapStore.addLayerFilter('test_route-3DRoute', )

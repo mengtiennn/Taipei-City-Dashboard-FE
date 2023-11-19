@@ -657,19 +657,16 @@ export const useMapStore = defineStore("map", {
 			this.addLayerFilter2('test_route-3DRoute', 'RouteName', cond[idx].Route_Green, this.nowData.map_config[0], month)
 		},
 		addLayerFilter2(layer_id, property, key, map_config, month) {
-			console.log(layer_id, property, key, map_config)
-			// this.map.removeLayer(layer_id)
+			this.map.removeLayer(layer_id)
 			let toBeFiltered = {
 				...this.map.getSource(`${layer_id}-source`)._data,
 			}
 			toBeFiltered.features = toBeFiltered.features.filter((el) => {
-				const routeName = el.properties.model.routeName
-				console.log(routeName)
+				const routeName = el.properties.model.RouteName
 				return key.includes(routeName)
 			})
-			console.log(toBeFiltered)
-			// map_config.layerId = layer_id
-			// this.Add3DRouteLayer(map_config, toBeFiltered, this.threeboxModelSource)
+			map_config.layerId = layer_id
+			this.Add3DRouteLayer(map_config, toBeFiltered, this.threeboxModelSource)
 		}
 	},
 });

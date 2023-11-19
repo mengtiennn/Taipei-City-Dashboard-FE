@@ -4,24 +4,76 @@
 			"name": "",
 			"data": [
 				{
-					"x": "2023/01/01",
-					"y": 300,
-					"data": [1, 2, 3, 4]
+					"x": "2023/8",
+					"y": 324,
+					"data": [
+						{
+							"EBUS_QTY": 79,
+							"operatorno": "欣欣客運"
+						},
+						{
+							"EBUS_QTY": 68,
+							"operatorno": "指南客運"
+						},
+						{
+							"EBUS_QTY": 177,
+							"operatorno": "首都客運"
+						}
+					]
 				},
 				{
-					"x": "2023/04/01",
-					"y": 496,
-					"data": [1, 3, 2, 4]
+					"x": "2023/9",
+					"y": 323,
+					"data": [
+						{
+							"EBUS_QTY": 82,
+							"operatorno": "欣欣客運"
+						},
+						{
+							"EBUS_QTY": 62,
+							"operatorno": "指南客運"
+						},
+						{
+							"EBUS_QTY": 179,
+							"operatorno": "首都客運"
+						}
+					]
 				},
 				{
-					"x": "2023/07/01",
-					"y": 457,
-					"data": [2, 3, 1, 4]
+					"x": "2023/10",
+					"y": 325,
+					"data": [
+						{
+							"EBUS_QTY": 82,
+							"operatorno": "欣欣客運"
+						},
+						{
+							"EBUS_QTY": 65,
+							"operatorno": "指南客運"
+						},
+						{
+							"EBUS_QTY": 178,
+							"operatorno": "首都客運"
+						}
+					]
 				},
 				{
-					"x": "2023/10/01",
-					"y": 403,
-					"data": [3, 4, 2, 1]
+					"x": "2023/11",
+					"y": 324,
+					"data": [
+						{
+							"EBUS_QTY": 79,
+							"operatorno": "欣欣客運"
+						},
+						{
+							"EBUS_QTY": 67,
+							"operatorno": "指南客運"
+						},
+						{
+							"EBUS_QTY": 178,
+							"operatorno": "首都客運"
+						}
+					]
 				}
 			]
 		}

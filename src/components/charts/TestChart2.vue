@@ -167,34 +167,60 @@ const drawscreen = (ctx) => {
 	var deg = Math.PI / 180;
 	var begin_deg = (-90 * Math.PI) / 180;
 	var total = 0;
+	var totala = 0;
+	var totalb = 0;
+	var totalc = 0;
+	// var ob2 = []
+	const data = [...props.series[0].data];
+	console.log(data);
+	data.forEach((item, index) => {
+		if (index % 3 === 1) {
+			totala += item.y;
+		} else if (index % 3 === 2) {
+			totalb += item.y;
+		} else {
+			totalc += item.y;
+		}
+		item.data.forEach((item2, index2) => {
+			console.log(item2.EBUS_QTY);
+			const data = {
+				x: props.chart_config.center[0],
+				y: props.chart_config.center[1],
+				style: props.chart_config.color[index2 % 3],
+				name: index2 % 3 === 0 ? item2.operatorno : null,
+				r: item2.EBUS_QTY,
+			};
+			console.log(data);
+		});
+	});
 	let ob = [
 		// group1
 		{
 			value: 100,
 			name: "1月",
-			x: 200,
-			y: 200,
-			r: 100,
 			sDeg: 0,
 			eDeg: 50,
+			x: 200,
+			y: 200,
+			r: 30,
 			style: "#d8ae2d",
 		},
 		{
 			value: 0,
-			name: "",
+			name: "1月",
 			x: 200,
 			y: 200,
-			r: 50,
+			r: 20,
 			sDeg: 0,
 			eDeg: 50,
 			style: "#5f9747",
 		},
 		{
 			value: 0,
-			name: "",
+			name: "1月",
 			x: 200,
 			y: 200,
-			r: 20,
+			r: 10,
 			sDeg: 0,
 			eDeg: 50,
 			style: "#2986cc",
@@ -383,17 +409,9 @@ const getTarget = () => {
 <template>
 	<div v-if="activeChart === 'TestChart2'" class="TestChart2">
 		<div class="lineList">
-			<div>
-				<div class="drive"></div>
-				<span style="color: rgb(216, 174, 45)">欣欣客運</span>
-			</div>
-			<div>
-				<div class="drive2"></div>
-				<span style="color: rgb(95, 151, 71)">首都客運</span>
-			</div>
-			<div>
-				<div class="drive3"></div>
-				<span style="color: rgb(42, 134, 204)">指南客運</span>
+			<div v-for="(item, index) in props.chart_config.color" :key="index">
+				<div :style="`background: ${item}`" class="drive"></div>
+				<span>{{ item }}</span>
 			</div>
 		</div>
 		<canvas
@@ -438,21 +456,19 @@ const getTarget = () => {
 			width: 30px;
 			height: 10px;
 			border-radius: 10px;
-			background-color: rgb(216, 174, 45);
 			margin-right: 5px;
+			background-color: "";
 		}
 		.drive2 {
 			width: 30px;
 			height: 10px;
 			border-radius: 10px;
-			background-color: rgb(95, 151, 71);
 			margin-right: 5px;
 		}
 		.drive3 {
 			width: 30px;
 			height: 10px;
 			border-radius: 10px;
-			background-color: rgb(42, 134, 204);
 			margin-right: 5px;
 		}
 	}

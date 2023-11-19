@@ -39,6 +39,7 @@ import TestChart from "./components/charts/TestChart.vue";
 import TestChart2 from "./components/charts/TestChart2.vue";
 import TestChart3 from "./components/charts/TestChart3.vue";
 import TestChart4 from "./components/charts/TestChart4.vue";
+import TestChart5 from "./components/charts/TestChart5.vue";
 import MadeChart from "./components/charts/MadeChart.vue";
 
 const app = createApp(App);
@@ -67,6 +68,7 @@ app.component("TestChart", TestChart);
 app.component("TestChart2", TestChart2);
 app.component("TestChart3", TestChart3);
 app.component("TestChart4", TestChart4);
+app.component("TestChart5", TestChart5);
 app.component("MadeChart", MadeChart);
 
 app.mount("#app");

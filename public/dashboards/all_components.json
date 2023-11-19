@@ -3148,7 +3148,7 @@
 					"充電站使用量"
 				]
 			},
-			"history_data": false,
+			"history_data": true,
 			"source": "交通局",
 			"time_from": "2023-05-11T08:00:00+08:00",
 			"time_to": null,
@@ -4138,7 +4138,7 @@
 					"index": "test_gogo",
 					"paint": {
 						"heatmap-weight": [
-						"interpolate",
+							"interpolate",
 							["linear"],
 							["get", "mag"],
 							0,
@@ -4147,7 +4147,7 @@
 							1
 						],
 						"heatmap-intensity": [
-						"interpolate",
+							"interpolate",
 							["linear"],
 							["zoom"],
 							0,
@@ -4156,7 +4156,7 @@
 							3
 						],
 						"heatmap-color": [
-						"interpolate",
+							"interpolate",
 							["linear"],
 							["heatmap-density"],
 							0,
@@ -4173,7 +4173,7 @@
 							"rgb(178,24,43)"
 						],
 						"heatmap-radius": [
-						"interpolate",
+							"interpolate",
 							["linear"],
 							["zoom"],
 							0,
@@ -4182,7 +4182,7 @@
 							20
 						],
 						"heatmap-opacity": [
-						"interpolate",
+							"interpolate",
 							["linear"],
 							["zoom"],
 							7,
@@ -4215,19 +4215,10 @@
 				}
 			],
 			"chart_config": {
-				"types": [
-					"BarPercentChart",
-					"GuageChart"
-				],
-				"color": [
-					"#9DC56E",
-					"#356340",
-					"#9DC56E"
-				],
+				"types": ["BarPercentChart", "GuageChart"],
+				"color": ["#9DC56E", "#356340", "#9DC56E"],
 				"unit": "輛",
-				"categories": [
-					"Youbike在站車輛"
-				]
+				"categories": ["Youbike在站車輛"]
 			},
 			"source": "交通局/Youbike",
 			"name": "測試組件",
@@ -4242,9 +4233,7 @@
 				"https://tdx.transportdata.tw/api-service/swagger/basic/2cc9b888-a592-496f-99de-9ab35b7fb70d#/Bike/BikeApi_Availability_2181"
 			],
 			"tags": [],
-			"contributors": [
-				"tuic"
-			]
+			"contributors": ["tuic"]
 		},
 		"591": {
 			"id": 591,
@@ -4256,28 +4245,28 @@
 					"paint": {
 						"circle-radius": [
 							"interpolate",
-								["linear"],
-								["number",["get", "Casualty"]],
-								0,
-								4,
-								5,
-								24
+							["linear"],
+							["number", ["get", "Casualty"]],
+							0,
+							4,
+							5,
+							24
 						],
 						"circle-color": [
 							"interpolate",
 							["linear"],
-							["number",["get", "Casualty"]],
+							["number", ["get", "Casualty"]],
 							0,
 							"#2DC4B2",
 							1,
 							"#3BB3C3",
-										2,
+							2,
 							"#669EC4",
-										3,
+							3,
 							"#8B88B6",
-										4,
+							4,
 							"#A2719B",
-										5,
+							5,
 							"#AA5E79"
 						],
 						"circle-opacity": 0.8
@@ -4306,19 +4295,10 @@
 				}
 			],
 			"chart_config": {
-				"types": [
-					"BarPercentChart",
-					"GuageChart"
-				],
-				"color": [
-					"#9DC56E",
-					"#356340",
-					"#9DC56E"
-				],
+				"types": ["BarPercentChart", "GuageChart"],
+				"color": ["#9DC56E", "#356340", "#9DC56E"],
 				"unit": "輛",
-				"categories": [
-					"Youbike在站車輛"
-				]
+				"categories": ["Youbike在站車輛"]
 			},
 			"source": "交通局/Youbike",
 			"name": "測試組件2",
@@ -4333,9 +4313,7 @@
 				"https://tdx.transportdata.tw/api-service/swagger/basic/2cc9b888-a592-496f-99de-9ab35b7fb70d#/Bike/BikeApi_Availability_2181"
 			],
 			"tags": [],
-			"contributors": [
-				"tuic"
-			]
+			"contributors": ["tuic"]
 		},
 		"592": {
 			"id": 592,
@@ -4386,9 +4364,7 @@
 			"time_to": null,
 			"update_freq": null,
 			"update_freq_unit": null,
-			"contributors": [
-				"tuic"
-			]
+			"contributors": ["tuic"]
 		},
 		"148": {
 			"id": 148,
@@ -4447,6 +4423,7 @@
 		"149": {
 			"id": 149,
 			"index": "MadeChart",
+			"history_data": true,
 			"map_config": [
 				{
 					"index": "test_route",

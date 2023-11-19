@@ -78,7 +78,29 @@ const chartOptions = ref({
 		},
 		type: "datetime",
 	},
+	yaxis: {
+		labels: {
+			formatter: function (value) {
+				// console.log(formatNumber(value));
+				return formatNumber(value);
+			},
+		},
+	},
 });
+
+const formatNumber = (number) => {
+	var num = parseFloat(number);
+	var absNum = Math.abs(num);
+	console.log(absNum);
+	if (absNum >= 1e6) {
+		return (num / 1e6).toFixed(0) + "M";
+	} else if (absNum >= 1e3) {
+		return (num / 1e3).toFixed(0) + "k";
+	} else {
+		num.toString();
+		return;
+	}
+};
 
 function parseTime(time) {
 	return time.replace("T", " ").replace("+08:00", " ");
